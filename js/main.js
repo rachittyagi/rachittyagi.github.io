@@ -1776,7 +1776,7 @@ $('#counter-underconstruction').countdown('2016/12/15 12:00:00').on('update.coun
 $('#counter-underconstruction2').countdown('2016/03/15 12:00:00').on('update.countdown', function (event) {
     var $this = $(this).html(event.strftime('' + '<div class="counter-container"><div class="counter-box first"><div class="number">%-D</div><span>Day%!d</span></div>' + '<div class="counter-box"><div class="number">%H</div><span>Hours</span></div>' + '<div class="counter-box"><div class="number">%M</div><span>Minutes</span></div>' + '<div class="counter-box last"><div class="number">%S</div><span>Seconds</span></div></div>'))
 });
-$('#counter-wedding').countdown('2016/12/20 12:00:00').on('update.countdown', function (event) {
+$('#counter-wedding').countdown('2018/11/19 12:00:00').on('update.countdown', function (event) {
     var $this = $(this).html(event.strftime('' + '<div class="counter-container"><div class="counter-box first"><div class="number">%-D</div><span>Day%!d</span></div>' + '<div class="counter-box"><div class="number">%H</div><span>Hours</span></div>' + '<div class="counter-box"><div class="number">%M</div><span>Minutes</span></div>' + '<div class="counter-box last"><div class="number">%S</div><span>Seconds</span></div></div>'))
 });
 /*==============================================================*/
