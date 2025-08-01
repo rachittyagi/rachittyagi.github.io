@@ -36,8 +36,8 @@
     <header>
         <div class="container header-content">
             <!-- <img src="" alt="Profile Picture" class="profile-image"> -->
-            <h1>Rachit Tyagi</h1>
-            <p>Full Stack Web Developer | Angular | Node | React | .NET/.NET Core | Generative AI</p>
+            <h1 class="profile-name">Rachit Tyagi</h1>
+            <p class="profile-sub-title">Full Stack Web Developer | Angular | Node | React | .NET/.NET Core | Generative AI</p>
         </div>
     </header>
 
@@ -156,6 +156,22 @@
                 });
             });
         });
+
+        // Add typing effect to name
+        const subTitle = document.querySelector('.profile-sub-title');
+        const text = subTitle.textContent;
+        subTitle.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < text.length) {
+                subTitle.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        
+        setTimeout(typeWriter, 1000);
     </script>
 </body>
 </html>
