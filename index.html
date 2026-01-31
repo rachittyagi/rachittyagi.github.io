@@ -68,13 +68,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><style> circle { fill: %230f172a; } text { fill: %233b82f6; font-family: monospace; font-weight: bold; } @media (prefers-color-scheme: dark) { circle { fill: %23f1f5f9; } text { fill: %230f172a; } } </style><circle cx='50' cy='50' r='50'/><text x='50' y='65' font-size='60' text-anchor='middle'>RT</text></svg>">
+    <link href="./style.css" rel="stylesheet">
 </head>
 
-<body>
+<body data-theme="dark">
     <nav class="nav">
         <ul class="nav-list">
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#featured-work" class="nav-link">Work</a></li>
             <li><a href="#experience" class="nav-link">Experience</a></li>
             <li><a href="#academics" class="nav-link">Academics</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -407,6 +411,7 @@
     </footer>
 
     <button class="theme-toggle" aria-label="Toggle Dark Mode">🌓</button>
+    <button class="back-to-top" aria-label="Back to Top">⬆</button>
 
     <script>
         // Theme Toggle with Persistence
@@ -420,7 +425,8 @@
 
         if (savedTheme) {
             body.setAttribute('data-theme', savedTheme);
-        } else if (systemPrefersDark) {
+        } else {
+            // Default to dark theme
             body.setAttribute('data-theme', 'dark');
         }
 
@@ -430,6 +436,24 @@
 
             body.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         // Smooth Scroll

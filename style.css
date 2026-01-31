@@ -147,6 +147,17 @@ header::before {
     width: auto;
     max-width: 90%;
     transition: all var(--transition-speed) ease;
+    /* Mobile scroll handling */
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Hide scrollbar */
+}
+
+/* Hide scrollbar for Chrome/Safari */
+.nav::-webkit-scrollbar {
+    display: none;
 }
 
 .nav-list {
@@ -156,6 +167,8 @@ header::before {
     list-style: none;
     margin: 0;
     padding: 0;
+    min-width: min-content;
+    /* Ensure children dictate width */
 }
 
 .nav-link {
@@ -662,6 +675,42 @@ h3 {
 .theme-toggle:hover {
     transform: scale(1.1);
     background: var(--accent-color);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 6rem;
+    /* Left of theme toggle */
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
 }
 
 /* Dark Theme */
