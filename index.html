@@ -57,6 +57,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachit Tyagi - Full Stack Web Developer </title>
+    <meta name="description"
+        content="Rachit Tyagi - Senior Full Stack Web Developer with 12+ years experience in Angular, React, Node.js, .NET Core, and AI technologies. Expert in scalable web applications and microservices.">
+    <meta name="keywords"
+        content="Full Stack Developer, Angular Developer, React Developer, Node.js, .NET Core, C#, SQL, MySQL, Postgres, Database, Web Development, JavaScript, TypeScript, Microservices, AI Integration">
+    <meta name="author" content="Rachit Tyagi">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -83,19 +94,30 @@
                     📄 View Resume (PDF)
                 </a>
             </div>
+
+            <!-- Terminal "Markdown" Animation -->
+            <div class="terminal-loader fade-in-up" style="animation-delay: 0.5s;">
+                <div class="terminal-header">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                </div>
+                <!-- Content injected by JS -->
+                <div id="terminal-content"></div>
+            </div>
         </div>
     </header>
 
     <main class="container">
 
         <!-- Hero Quote -->
-        <div class="hero-quote" style="animation: fadeInUp 1.2s ease backwards;">
+        <div class="hero-quote reveal-on-scroll">
             "I focus on building systems that age well in production, favoring clean code and pragmatic trade-offs over
             prototypes."
             <span>— Engineering Philosophy</span>
         </div>
 
-        <section id="about">
+        <section id="about" class="reveal-on-scroll">
             <h2>About Me</h2>
             <div class="about-grid">
                 <div class="about-text">
@@ -119,7 +141,7 @@
                 </div>
 
                 <div class="highlight-cards">
-                    <div class="highlight-card">
+                    <div class="highlight-card stagger-1">
                         <div class="highlight-title">🤖 Agentic AI Focus</div>
                         <p class="highlight-text">
                             Specializing in <strong>controlled reasoning systems</strong>, schema-first validation, and
@@ -127,7 +149,7 @@
                         </p>
                     </div>
 
-                    <div class="highlight-card">
+                    <div class="highlight-card stagger-2">
                         <div class="highlight-title">🏗️ System Architecture</div>
                         <p class="highlight-text">
                             Designing <strong>API-first platforms</strong> and microservices that scale.
@@ -135,7 +157,7 @@
                         </p>
                     </div>
 
-                    <div class="highlight-card">
+                    <div class="highlight-card stagger-3">
                         <div class="highlight-title">🎯 Leadership</div>
                         <p class="highlight-text">
                             From mentoring junior engineers to driving technical strategy, I foster a culture of
@@ -146,11 +168,11 @@
             </div>
         </section>
 
-        <section id="skills">
+        <section id="skills" class="reveal-on-scroll">
             <h2>Technical Expertise</h2>
 
             <div class="skills-grid-wrapper">
-                <div class="skill-category">
+                <div class="skill-category stagger-1">
                     <h3>🤖 Agentic AI & Intelligent Systems</h3>
                     <div class="skills-list">
                         <span class="skill-tag">OpenAI APIs</span>
@@ -162,7 +184,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category stagger-2">
                     <h3>🎨 Frontend Engineering</h3>
                     <div class="skills-list">
                         <span class="skill-tag">Angular</span>
@@ -178,7 +200,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category stagger-3">
                     <h3>⚙️ Backend & Platform</h3>
                     <div class="skills-list">
                         <span class="skill-tag">Node.js</span>
@@ -192,7 +214,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category stagger-1">
                     <h3>🗄️ Data & Persistence</h3>
                     <div class="skills-list">
                         <span class="skill-tag">PostgreSQL</span>
@@ -204,7 +226,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category stagger-2">
                     <h3>☁️ Cloud & DevOps</h3>
                     <div class="skills-list">
                         <span class="skill-tag">AWS</span>
@@ -221,7 +243,7 @@
 
 
         <!-- Featured Work / Key Impact -->
-        <section id="featured-work">
+        <section id="featured-work" class="reveal-on-scroll">
             <h2>Featured Work & Impact</h2>
             <p style="margin-bottom: 2rem; color: var(--text-light);">
                 Due to the confidential nature of my enterprise clients, I cannot share code repositories.
@@ -230,7 +252,7 @@
 
             <div class="project-grid">
                 <!-- Project 1: AI Platform -->
-                <div class="project-card">
+                <div class="project-card stagger-1">
                     <div class="project-header">
                         <div class="project-title">AI-Assisted Content Platform</div>
                         <div class="project-role">Technical Architect</div>
@@ -253,7 +275,7 @@
                 </div>
 
                 <!-- Project 2: Finance/Legacy Migration -->
-                <div class="project-card">
+                <div class="project-card stagger-2">
                     <div class="project-header">
                         <div class="project-title">Enterprise Deployment Automation</div>
                         <div class="project-role">Senior Engineer</div>
@@ -276,9 +298,9 @@
             </div>
         </section>
 
-        <section id="experience">
+        <section id="experience" class="reveal-on-scroll">
             <h2>Experience</h2>
-            <div class="experience-item">
+            <div class="experience-item stagger-1">
                 <div class="experience-title">Technical Architect</div>
                 <div class="experience-company">TravelNet Solutions India, Chennai</div>
                 <div class="experience-date">Jan 2024 - Present</div>
@@ -294,7 +316,7 @@
                 </ul>
             </div>
 
-            <div class="experience-item">
+            <div class="experience-item stagger-2">
                 <div class="experience-title">Technical Architect</div>
                 <div class="experience-company">BrainVault Technologies Pvt Ltd, Chennai</div>
                 <div class="experience-date">Apr 2022 - Dec 2023</div>
@@ -308,7 +330,7 @@
                 </ul>
             </div>
 
-            <div class="experience-item">
+            <div class="experience-item stagger-3">
                 <div class="experience-title">Senior Software Engineer</div>
                 <div class="experience-company">DecisivEdge Technology Service India Pvt. Ltd., Pune</div>
                 <div class="experience-date">Sep 2016 - Aug 2022</div>
@@ -342,7 +364,7 @@
             </div>
         </section>
 
-        <section id="academics">
+        <section id="academics" class="reveal-on-scroll">
             <h2>Academics</h2>
             <div class="experience-item"> <!-- Using generic card style -->
                 <ul style="list-style-type: none; margin-left: 0;">
@@ -354,19 +376,19 @@
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="reveal-on-scroll">
             <h2>Contact</h2>
             <div class="contact-info">
-                <a href="mailto:torachitkumar@gmail.com" class="contact-link">
+                <a href="mailto:torachitkumar@gmail.com" class="contact-link stagger-1">
                     <span class="contact-icon">📧</span>
                     <span class="contact-text">torachitkumar@gmail.com</span>
                 </a>
-                <a href="https://github.com/rachittyagi" class="contact-link" target="_blank" rel="noopener noreferrer"
-                    aria-label="GitHub">
+                <a href="https://github.com/rachittyagi" class="contact-link stagger-2" target="_blank"
+                    rel="noopener noreferrer" aria-label="GitHub">
                     <span class="contact-icon">🔗</span>
                     <span class="contact-text">GitHub Profile</span>
                 </a>
-                <a href="https://linkedin.com/in/tyagirachit" class="contact-link" target="_blank"
+                <a href="https://linkedin.com/in/tyagirachit" class="contact-link stagger-3" target="_blank"
                     rel="noopener noreferrer" aria-label="LinkedIn">
                     <span class="contact-icon">💼</span>
                     <span class="contact-text">LinkedIn Profile</span>
@@ -416,7 +438,67 @@
                 });
             });
         });
-    </script>
+
+        // --- Intersection Observer for Scroll Animations ---
+        const observerOptions = {
+            threshold: 0.1, // Trigger when 10% visible
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(section => {
+            observer.observe(section);
+        });
+
+
+        // --- Terminal Typing Animation ---
+        const terminalLines = [
+            { text: "const engineer = {", type: "intro" },
+            { text: "  name: 'Rachit Tyagi',", type: "prop" },
+            { text: "  role: 'Architect',", type: "prop" },
+            { text: "  skills: ['Agentic AI', 'Cloud', 'System Design']", type: "prop" },
+            { text: "};", type: "intro" },
+            { text: "> Initializing Agent... 🚀", type: "status" }
+        ];
+
+        const terminalContent = document.getElementById('terminal-content');
+        let delay = 0;
+
+        terminalLines.forEach((line, index) => {
+            const lineEl = document.createElement('div');
+            lineEl.classList.add('code-line');
+
+            // Basic syntax highlighting
+            let html = line.text
+                .replace("const", "<span class='code-keyword'>const</span>")
+                .replace("name", "<span class='code-string'>name</span>")
+                .replace(/'([^']*)'/g, "<span class='code-string'>'$1'</span>")
+                .replace(/>/g, "<span class='code-func'>></span>");
+
+            lineEl.innerHTML = html;
+            lineEl.style.animationDelay = `${delay}s`;
+
+            terminalContent.appendChild(lineEl);
+            delay += 0.3; // Increment delay for next line
+        });
+
+    </script> // Add typing effect to name
+    const subTitle = document.querySelector('.profile-sub-title');
+    const text = subTitle.textContent;
+    subTitle.textContent = '';
+
+    let i = 0;
+    const typeWriter = () => {
+    if (i < text.length) { subTitle.textContent +=text.charAt(i); i++; setTimeout(typeWriter, 100); } };
+        setTimeout(typeWriter, 1000); </script>
 </body>
 
 </html>

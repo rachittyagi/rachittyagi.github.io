@@ -33,8 +33,9 @@ html::-webkit-scrollbar {
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
+    <<<<<<< HEAD font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    =======font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    >>>>>>>1feade1bfcdc6901b576129bc89c9b6caaf785ef line-height: 1.6;
     color: var(--text-color);
     background: var(--bg-color);
     overflow-x: hidden;
@@ -736,6 +737,105 @@ h3 {
     }
 }
 
+/* Scroll Reveal Classes */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for children */
+.stagger-1 {
+    transition-delay: 100ms;
+}
+
+.stagger-2 {
+    transition-delay: 200ms;
+}
+
+.stagger-3 {
+    transition-delay: 300ms;
+}
+
+/* Terminal / Markdown Component */
+.terminal-loader {
+    background: #1e1e1e;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Consolas', 'Monaco', monospace;
+    color: #d4d4d4;
+    font-size: 0.9rem;
+    max-width: 600px;
+    margin: 3rem auto 0;
+    text-align: left;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.terminal-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+.terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.terminal-dot.red {
+    background: #ff5f56;
+}
+
+.terminal-dot.yellow {
+    background: #ffbd2e;
+}
+
+.terminal-dot.green {
+    background: #27c93f;
+}
+
+.code-line {
+    display: block;
+    margin-bottom: 0.25rem;
+    opacity: 0;
+    /* Hidden by default for animation */
+    animation: typeLine 0.5s forwards;
+}
+
+.code-keyword {
+    color: #c586c0;
+}
+
+.code-string {
+    color: #ce9178;
+}
+
+.code-func {
+    color: #dcdcaa;
+}
+
+/* Typewriter animation keyframes */
+@keyframes typeLine {
+    to {
+        opacity: 1;
+    }
+}
+
+[data-theme="light"] .terminal-loader {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .container {
@@ -776,3 +876,5 @@ footer {
     background: var(--bg-color);
     transition: background var(--transition-speed) ease;
 }
+
+=======>>>>>>>1feade1bfcdc6901b576129bc89c9b6caaf785ef
