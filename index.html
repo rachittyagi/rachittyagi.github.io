@@ -85,25 +85,28 @@
         <div class="container header-content">
             <!-- Uncomment below when you have the image in assets/profile.jpg -->
             <!-- <img src="./assets/profile.jpg" alt="Rachit Tyagi" class="profile-image"> -->
-            <h1>Rachit Tyagi</h1>
-            <p>Senior Full Stack Engineer · Distributed Systems · Angular · React · Node.js · .NET/.NET Core · Agentic
-                AI </p>
+
+            <!-- SEO / Semantic Heading (Visually Hidden) -->
+            <h1 class="sr-only">Rachit Tyagi</h1>
+            <p class="sr-only">Senior Full Stack Engineer · Distributed Systems · Angular · React · Node.js · .NET/.NET
+                Core · Agentic AI</p>
+
+            <!-- Markdown Editor Animation -->
+            <div class="markdown-window fade-in-up" style="animation-delay: 0s;">
+                <div class="window-header">
+                    <div class="window-dot red"></div>
+                    <div class="window-dot yellow"></div>
+                    <div class="window-dot green"></div>
+                    <span class="window-title">README.md</span>
+                </div>
+                <div id="markdown-content" class="markdown-content"></div>
+            </div>
+
             <div style="margin-top: 2.5rem;">
                 <a href="./assets/resume-rachit-tyagi-v1.8.pdf" class="btn btn-primary" target="_blank"
                     aria-label="View Resume PDF">
                     📄 View Resume (PDF)
                 </a>
-            </div>
-
-            <!-- Terminal "Markdown" Animation -->
-            <div class="terminal-loader fade-in-up" style="animation-delay: 0.5s;">
-                <div class="terminal-header">
-                    <div class="terminal-dot red"></div>
-                    <div class="terminal-dot yellow"></div>
-                    <div class="terminal-dot green"></div>
-                </div>
-                <!-- Content injected by JS -->
-                <div id="terminal-content"></div>
             </div>
         </div>
     </header>
@@ -459,46 +462,45 @@
         });
 
 
-        // --- Terminal Typing Animation ---
-        const terminalLines = [
-            { text: "const engineer = {", type: "intro" },
-            { text: "  name: 'Rachit Tyagi',", type: "prop" },
-            { text: "  role: 'Architect',", type: "prop" },
-            { text: "  skills: ['Agentic AI', 'Cloud', 'System Design']", type: "prop" },
-            { text: "};", type: "intro" },
-            { text: "> Initializing Agent... 🚀", type: "status" }
+        // --- Markdown Typing Animation ---
+        const markdownLines = [
+            "# Rachit Tyagi",
+            "## Senior Full Stack Engineer",
+            "",
+            "- 🔭 Working on: **Agentic AI**",
+            "- 🏗️ Architecting: **Distributed Systems**",
+            "- ⚡ Tech: `Angular` `React` `Node` `.NET/.NET Core`, `Typescript`",
+            "",
+            "> \"Building systems that age well.\""
         ];
 
-        const terminalContent = document.getElementById('terminal-content');
+        const markdownContent = document.getElementById('markdown-content');
         let delay = 0;
 
-        terminalLines.forEach((line, index) => {
+        markdownLines.forEach((line) => {
             const lineEl = document.createElement('div');
-            lineEl.classList.add('code-line');
+            lineEl.classList.add('md-line');
 
-            // Basic syntax highlighting
-            let html = line.text
-                .replace("const", "<span class='code-keyword'>const</span>")
-                .replace("name", "<span class='code-string'>name</span>")
-                .replace(/'([^']*)'/g, "<span class='code-string'>'$1'</span>")
-                .replace(/>/g, "<span class='code-func'>></span>");
+            // Basic Markdown Parsing
+            let html = line
+                .replace(/^# (.*)/, "<span class='md-h1'># $1</span>")
+                .replace(/^## (.*)/, "<span class='md-h2'>## $1</span>")
+                .replace(/\*\*(.*?)\*\*/g, "<span class='md-bold'>**$1**</span>")
+                .replace(/`([^`]*)`/g, "<span class='md-code'>`$1`</span>")
+                .replace(/^- (.*)/, "<span class='md-list'>-</span> $1")
+                .replace(/^> (.*)/, "<span class='md-quote'>> $1</span>");
+
+            // Empty lines needed a non-breaking space to render height
+            if (line === "") html = "&nbsp;";
 
             lineEl.innerHTML = html;
             lineEl.style.animationDelay = `${delay}s`;
 
-            terminalContent.appendChild(lineEl);
+            markdownContent.appendChild(lineEl);
             delay += 0.3; // Increment delay for next line
         });
 
-    </script> // Add typing effect to name
-    const subTitle = document.querySelector('.profile-sub-title');
-    const text = subTitle.textContent;
-    subTitle.textContent = '';
-
-    let i = 0;
-    const typeWriter = () => {
-    if (i < text.length) { subTitle.textContent +=text.charAt(i); i++; setTimeout(typeWriter, 100); } };
-        setTimeout(typeWriter, 1000); </script>
+    </script>
 </body>
 
 </html>

@@ -33,9 +33,8 @@ html::-webkit-scrollbar {
 }
 
 body {
-    <<<<<<< HEAD font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    =======font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    >>>>>>>1feade1bfcdc6901b576129bc89c9b6caaf785ef line-height: 1.6;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
     color: var(--text-color);
     background: var(--bg-color);
     overflow-x: hidden;
@@ -45,6 +44,19 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 2rem;
+}
+
+/* Utility: Screen Reader / SEO Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 /* Header */
@@ -762,68 +774,117 @@ h3 {
     transition-delay: 300ms;
 }
 
-/* Terminal / Markdown Component */
-.terminal-loader {
-    background: #1e1e1e;
+/* Markdown Editor Component */
+.markdown-window {
+    background: #0d1117;
+    /* GitHub Dark Dimmed */
     border-radius: 8px;
-    padding: 1rem;
-    font-family: 'Consolas', 'Monaco', monospace;
-    color: #d4d4d4;
-    font-size: 0.9rem;
-    max-width: 600px;
-    margin: 3rem auto 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    color: #c9d1d9;
+    font-size: 1.1rem;
+    /* Hero size */
+    max-width: 680px;
+    /* Slightly wider */
+    margin: 0 auto;
+    /* Removed top margin */
     text-align: left;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    border: 1px solid #333;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    border: 1px solid #30363d;
     position: relative;
     overflow: hidden;
+    line-height: 1.6;
 }
 
-.terminal-header {
+.window-header {
+    background: #161b22;
     display: flex;
-    gap: 6px;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #333;
-    padding-bottom: 0.5rem;
+    gap: 8px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #30363d;
+    align-items: center;
 }
 
-.terminal-dot {
-    width: 10px;
-    height: 10px;
+.window-dot {
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
 }
 
-.terminal-dot.red {
+.window-dot.red {
     background: #ff5f56;
 }
 
-.terminal-dot.yellow {
+.window-dot.yellow {
     background: #ffbd2e;
 }
 
-.terminal-dot.green {
+.window-dot.green {
     background: #27c93f;
 }
 
-.code-line {
+.window-title {
+    margin-left: 10px;
+    font-size: 0.8rem;
+    color: #8b949e;
+    font-family: sans-serif;
+}
+
+.markdown-content {
+    padding: 1.5rem;
+}
+
+.md-line {
     display: block;
-    margin-bottom: 0.25rem;
+    min-height: 1.5em;
     opacity: 0;
-    /* Hidden by default for animation */
     animation: typeLine 0.5s forwards;
+    white-space: pre-wrap;
+    /* Preserve spaces */
 }
 
-.code-keyword {
-    color: #c586c0;
+/* Markdown Syntax Highlighting */
+.md-h1 {
+    color: #58a6ff;
+    font-weight: bold;
 }
 
-.code-string {
-    color: #ce9178;
+/* Blue */
+.md-h2 {
+    color: #58a6ff;
+    font-weight: bold;
 }
 
-.code-func {
-    color: #dcdcaa;
+.md-bold {
+    color: #bc8cff;
+    font-weight: bold;
 }
+
+/* Purple */
+.md-list {
+    color: #f0883e;
+}
+
+/* Orange */
+.md-code {
+    color: #79c0ff;
+    background: #1f2937;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Light Blue */
+.md-link {
+    color: #a5d6ff;
+    text-decoration: underline;
+}
+
+.md-quote {
+    color: #7ee787;
+    font-style: italic;
+}
+
+/* Green */
 
 /* Typewriter animation keyframes */
 @keyframes typeLine {
@@ -832,9 +893,28 @@ h3 {
     }
 }
 
-[data-theme="light"] .terminal-loader {
+[data-theme="light"] .markdown-window {
+    background: #ffffff;
+    border-color: #e1e4e8;
+    color: #24292e;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
+
+[data-theme="light"] .window-header {
+    background: #f6f8fa;
+    border-color: #e1e4e8;
+}
+
+[data-theme="light"] .md-h1,
+[data-theme="light"] .md-h2 {
+    color: #0366d6;
+}
+
+[data-theme="light"] .md-code {
+    background: #f6f8fa;
+    color: #032f62;
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -876,5 +956,3 @@ footer {
     background: var(--bg-color);
     transition: background var(--transition-speed) ease;
 }
-
-=======>>>>>>>1feade1bfcdc6901b576129bc89c9b6caaf785ef
