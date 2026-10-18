@@ -994,6 +994,426 @@ h3 {
     }
 }
 
+/* ===== Hero actions ===== */
+.hero-actions {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.hero-actions .btn {
+    margin-top: 0;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-ghost:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* README lines: CSS-driven stagger (works without JS) */
+.md-line {
+    animation-delay: calc(var(--i, 0) * 0.3s);
+}
+
+/* ===== Shared section helpers ===== */
+.section-intro {
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    max-width: 760px;
+}
+
+.subsection-title {
+    margin-top: 0;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-color);
+}
+
+.project-grid + .subsection-title {
+    margin-top: 3.5rem;
+}
+
+.plain-list {
+    list-style: none;
+    margin-left: 0 !important;
+}
+
+.earlier-title {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+code {
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    font-size: 0.88em;
+    background: var(--hover-color);
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+/* ===== Project cards (extras) ===== */
+.status-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 50px;
+    padding: 0.1rem 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.project-link {
+    margin-top: 1.25rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== How I Work ===== */
+.principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.principle {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+}
+
+.principle-key {
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--primary-color);
+}
+
+.principle-eq {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.principle-val {
+    color: var(--text-light);
+    flex-basis: 100%;
+}
+
+/* Inline links in prose */
+.about-text a,
+.section-intro a {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Last card on its own row stretches instead of leaving a gap */
+.project-grid > .project-card:last-child:nth-child(odd):not(:first-child) {
+    grid-column: 1 / -1;
+}
+
+.contact-info {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.flow {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.6rem;
+    margin: 0 0 1rem;
+    padding: 0;
+}
+
+.flow-step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--text-color);
+}
+
+.flow-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -1.25rem;
+    color: var(--text-light);
+}
+
+.flow-num {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+.flow-ai {
+    border-color: #a78bfa;
+}
+
+.flow-human {
+    border-color: #34d399;
+    border-width: 2px;
+}
+
+.flow-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    display: inline-block;
+    border: 2px solid;
+}
+
+.legend-ai {
+    border-color: #a78bfa;
+}
+
+.legend-human {
+    border-color: #34d399;
+    margin-left: 0.8rem;
+}
+
+.how-grid .highlight-card {
+    height: 100%;
+}
+
+/* ===== Writing ===== */
+.article-list {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.article-card {
+    display: block;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    text-decoration: none;
+    transition: all var(--transition-speed) ease;
+}
+
+.article-card:hover {
+    border-color: var(--accent-color);
+    transform: translateX(4px);
+}
+
+.article-title {
+    display: block;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+}
+
+.article-card:hover .article-title {
+    color: var(--accent-color);
+}
+
+.article-desc {
+    display: block;
+    color: var(--text-light);
+    font-size: 0.93rem;
+}
+
+/* ===== Education ===== */
+#education .experience-item {
+    border-left-color: var(--secondary-color);
+}
+
+#education .plain-list li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+/* ===== Ask box ===== */
+.ask-box {
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+.ask-log {
+    max-height: 380px;
+    min-height: 160px;
+    overflow-y: auto;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.ask-msg {
+    max-width: 85%;
+    padding: 0.75rem 1rem;
+    border-radius: 14px;
+    line-height: 1.55;
+    font-size: 0.95rem;
+}
+
+.ask-bot {
+    align-self: flex-start;
+    background: var(--hover-color);
+    color: var(--text-color);
+    border-bottom-left-radius: 4px;
+}
+
+.ask-user {
+    align-self: flex-end;
+    background: var(--accent-color);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+[data-theme="dark"] .ask-user {
+    color: #0f172a;
+}
+
+.ask-source {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--text-light);
+}
+
+.ask-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 1.25rem 1rem;
+}
+
+.ask-chip {
+    font: inherit;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.ask-chip:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.ask-form {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.ask-input {
+    flex: 1;
+    min-width: 0;
+    font: inherit;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--section-bg);
+    color: var(--text-color);
+}
+
+.ask-input:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 1px;
+}
+
+.ask-send {
+    font: inherit;
+    font-weight: 600;
+    padding: 0.7rem 1.4rem;
+    border-radius: 10px;
+    border: none;
+    background: var(--accent-color);
+    color: white;
+    cursor: pointer;
+}
+
+[data-theme="dark"] .ask-send {
+    color: #0f172a;
+}
+
+/* Contact sub-line */
+.contact-sub {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: -0.75rem;
+}
+
+@media (max-width: 600px) {
+    .flow-step:not(:last-child)::after {
+        display: none;
+    }
+
+    .flow {
+        gap: 0.5rem;
+    }
+
+    .ask-msg {
+        max-width: 95%;
+    }
+
+    .skills-grid-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Footer */
 footer {
     text-align: center;
